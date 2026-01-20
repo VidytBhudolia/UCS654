@@ -97,7 +97,7 @@ print("Ranks:", result.ranks)
 
 📍 **PyPI Link**: https://pypi.org/project/topsis-vidyt-102303747/
 
-📍 **Repository**: https://github.com/VidytBhudolia/UCS654-102303747
+📍 **Repository**: https://github.com/VidytBhudolia/UCS654
 
 📍 **Requirements**: Python ≥3.7, numpy, pandas, openpyxl
 
@@ -207,8 +207,8 @@ MIT License - See LICENSE file for details
 ## Links
 
 - **PyPI**: https://pypi.org/project/topsis-vidyt-102303747/
-- **GitHub**: https://github.com/VidytBhudolia/UCS654-102303747
-- **Issues**: https://github.com/VidytBhudolia/UCS654-102303747/issues
+- **GitHub**: https://github.com/VidytBhudolia/UCS654
+- **Issues**: https://github.com/VidytBhudolia/UCS654/issues
 
 ---
 

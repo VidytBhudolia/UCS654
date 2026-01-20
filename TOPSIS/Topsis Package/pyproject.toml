@@ -35,10 +35,10 @@ dependencies = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/VidytBhudolia/UCS654-102303747"
-Documentation = "https://github.com/VidytBhudolia/UCS654-102303747/blob/main/README.md"
-Repository = "https://github.com/VidytBhudolia/UCS654-102303747.git"
-"Bug Tracker" = "https://github.com/VidytBhudolia/UCS654-102303747/issues"
+Homepage = "https://github.com/VidytBhudolia/UCS654"
+Documentation = "https://github.com/VidytBhudolia/UCS654/blob/main/README.md"
+Repository = "https://github.com/VidytBhudolia/UCS654.git"
+"Bug Tracker" = "https://github.com/VidytBhudolia/UCS654/issues"
 
 [project.scripts]
 topsis = "topsis_package.__main__:main"

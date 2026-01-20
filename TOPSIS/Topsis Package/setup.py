@@ -11,7 +11,7 @@ setup(
     description="TOPSIS decision-making algorithm implementation",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/VidytBhudolia/UCS654-102303747",
+    url="https://github.com/VidytBhudolia/UCS654",
     packages=find_packages(),
     classifiers=[
         "Development Status :: 4 - Beta",
