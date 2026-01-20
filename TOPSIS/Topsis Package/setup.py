@@ -5,13 +5,13 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setup(
     name="topsis-vidyt-102303747",
-    version="1.0.0",
+    version="1.0.2",
     author="Vidyt",
     author_email="vidyt102303747@example.com",
     description="TOPSIS decision-making algorithm implementation",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/VidytBhudolia/topsis-vidyt-102303747",
+    url="https://github.com/VidytBhudolia/UCS654-102303747",
     packages=find_packages(),
     classifiers=[
         "Development Status :: 4 - Beta",

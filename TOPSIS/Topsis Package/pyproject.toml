@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "topsis-vidyt-102303747"
-version = "1.0.1"
+version = "1.0.2"
 description = "TOPSIS (Technique for Order of Preference by Similarity to Ideal Solution) implementation for multi-criteria decision making"
 readme = "README.md"
 requires-python = ">=3.7"
@@ -35,10 +35,10 @@ dependencies = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/VidytBhudolia/topsis-vidyt-102303747"
-Documentation = "https://github.com/VidytBhudolia/topsis-vidyt-102303747/blob/main/README.md"
-Repository = "https://github.com/VidytBhudolia/topsis-vidyt-102303747.git"
-"Bug Tracker" = "https://github.com/VidytBhudolia/topsis-vidyt-102303747/issues"
+Homepage = "https://github.com/VidytBhudolia/UCS654-102303747"
+Documentation = "https://github.com/VidytBhudolia/UCS654-102303747/blob/main/README.md"
+Repository = "https://github.com/VidytBhudolia/UCS654-102303747.git"
+"Bug Tracker" = "https://github.com/VidytBhudolia/UCS654-102303747/issues"
 
 [project.scripts]
 topsis = "topsis_package.__main__:main"
