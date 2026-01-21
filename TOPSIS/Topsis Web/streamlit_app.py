@@ -49,12 +49,12 @@ def send_email_with_attachment(to_email: str, csv_bytes: bytes, filename: str = 
 
     # Try st.secrets first (Streamlit Cloud), fallback to environment variables (local)
     try:
-        host = st.secrets.get("SMTP_HOST")
-        port = int(st.secrets.get("SMTP_PORT", "587"))
-        user = st.secrets.get("SMTP_USER")
-        pwd = st.secrets.get("SMTP_PASS")
+        host = st.secrets["SMTP_HOST"]
+        port = int(st.secrets["SMTP_PORT"])
+        user = st.secrets["SMTP_USER"]
+        pwd = st.secrets["SMTP_PASS"]
         sender = st.secrets.get("SMTP_FROM", user)
-    except Exception:
+    except (KeyError, FileNotFoundError):
         host = os.environ.get("SMTP_HOST")
         port = int(os.environ.get("SMTP_PORT", "587"))
         user = os.environ.get("SMTP_USER")
