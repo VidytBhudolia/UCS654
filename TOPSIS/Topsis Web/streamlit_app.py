@@ -48,13 +48,24 @@ def send_email_with_attachment(to_email: str, csv_bytes: bytes, filename: str = 
     from email.message import EmailMessage
 
     # Try st.secrets first (Streamlit Cloud), fallback to environment variables (local)
+    host = None
+    port = 587
+    user = None
+    pwd = None
+    sender = None
+    
     try:
-        host = st.secrets["SMTP_HOST"]
-        port = int(st.secrets["SMTP_PORT"])
-        user = st.secrets["SMTP_USER"]
-        pwd = st.secrets["SMTP_PASS"]
-        sender = st.secrets.get("SMTP_FROM", user)
-    except (KeyError, FileNotFoundError):
+        if hasattr(st, 'secrets') and len(st.secrets) > 0:
+            host = st.secrets["SMTP_HOST"]
+            port = int(st.secrets["SMTP_PORT"])
+            user = st.secrets["SMTP_USER"]
+            pwd = st.secrets["SMTP_PASS"]
+            sender = st.secrets.get("SMTP_FROM", user)
+    except (KeyError, FileNotFoundError, Exception):
+        pass
+    
+    # Fallback to environment variables
+    if not host:
         host = os.environ.get("SMTP_HOST")
         port = int(os.environ.get("SMTP_PORT", "587"))
         user = os.environ.get("SMTP_USER")
@@ -62,7 +73,7 @@ def send_email_with_attachment(to_email: str, csv_bytes: bytes, filename: str = 
         sender = os.environ.get("SMTP_FROM", user)
 
     if not (host and user and pwd and sender):
-        raise RuntimeError("SMTP credentials not configured (SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASS, SMTP_FROM)")
+        raise RuntimeError("SMTP credentials not configured. Please add SMTP_HOST, SMTP_USER, SMTP_PASS, SMTP_FROM in Streamlit secrets (Settings → Secrets)")
 
     msg = EmailMessage()
     msg["Subject"] = "TOPSIS Result"
