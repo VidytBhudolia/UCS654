@@ -200,7 +200,7 @@ MIT License - See LICENSE file for details
 
 ## Author
 
-**Vidyt** (Roll No: 102303747)
+**Vidyt Bhudolia** (Roll No: 102303747)
 
 ---
 
