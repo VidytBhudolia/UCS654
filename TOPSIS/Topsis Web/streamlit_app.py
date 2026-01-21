@@ -47,11 +47,19 @@ def send_email_with_attachment(to_email: str, csv_bytes: bytes, filename: str = 
     import smtplib
     from email.message import EmailMessage
 
-    host = os.environ.get("SMTP_HOST")
-    port = int(os.environ.get("SMTP_PORT", "587"))
-    user = os.environ.get("SMTP_USER")
-    pwd = os.environ.get("SMTP_PASS")
-    sender = os.environ.get("SMTP_FROM", user)
+    # Try st.secrets first (Streamlit Cloud), fallback to environment variables (local)
+    try:
+        host = st.secrets.get("SMTP_HOST")
+        port = int(st.secrets.get("SMTP_PORT", "587"))
+        user = st.secrets.get("SMTP_USER")
+        pwd = st.secrets.get("SMTP_PASS")
+        sender = st.secrets.get("SMTP_FROM", user)
+    except Exception:
+        host = os.environ.get("SMTP_HOST")
+        port = int(os.environ.get("SMTP_PORT", "587"))
+        user = os.environ.get("SMTP_USER")
+        pwd = os.environ.get("SMTP_PASS")
+        sender = os.environ.get("SMTP_FROM", user)
 
     if not (host and user and pwd and sender):
         raise RuntimeError("SMTP credentials not configured (SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASS, SMTP_FROM)")
