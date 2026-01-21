@@ -1,7 +1,0 @@
-streamlit>=1.32
-pandas>=1.0
-numpy>=1.19
-openpyxl>=3.0
-# Use the published package
-# If local, add editable install instead
-# -e ../Topsis Package
